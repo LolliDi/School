@@ -21,7 +21,9 @@
             <TextBox Width="400" Name="TextBlockDescription" Height="100" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="5"></TextBox>
             <TextBlock  Margin="5,0,0,-5">Скидка(от 0 до 1)</TextBlock>
             <TextBox Width="300" Name="TextBlockDiscount" HorizontalAlignment="Left" Margin="5"></TextBox>
-            <Button Width="100" Click="AddButton_Click">Добавить</Button>
+            <Button Width="100" Click="AddButton_Click" Template="{StaticResource but}">
+                <TextBlock HorizontalAlignment="Center">Добавить</TextBlock>
+            </Button>
         </StackPanel>
     </Grid>
 </Page>

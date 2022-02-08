@@ -9,7 +9,7 @@ namespace School
 {
     public partial class Service
     {
-        public SolidColorBrush DiscountColor
+        public SolidColorBrush DiscountColor //цвет фона, зависит от наличия скидки
         {
             get
             {
@@ -17,7 +17,7 @@ namespace School
                 else return new SolidColorBrush(Color.FromArgb(50, 231, 250, 191));
             }
         }
-        public string DiscountService
+        public string DiscountService //для перечеркнутой цены
         {
             get
             {
@@ -30,12 +30,12 @@ namespace School
                 
             }
         }
-        public string CostService
+        public string CostService //строка с ценой
         {
             get
             {
                 string cost = "";
-                if (Discount > 0)
+                if (Discount > 0) //если есть скидка
                 {
                     cost = "" + ((double)Cost * (1-Discount)) + " рублей за " + (DurationInSeconds / 60) + " минут\n*скидка " + (Discount*100) + "%";
                 }
@@ -43,6 +43,19 @@ namespace School
                 {
                     cost = "" + (int)Cost + " рублей за " + (DurationInSeconds / 60) + " минут";
                 }
+                return cost;
+            }
+        }
+        public double GetCost //возврат цены с учетом скидки
+        {
+            get
+            {
+                double cost = (double)Cost;
+                if (Discount > 0)
+                {
+                    cost = (double)(Convert.ToInt32(Cost) * (1 - Discount));
+                }
+
                 return cost;
             }
         }

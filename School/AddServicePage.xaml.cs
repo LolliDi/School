@@ -16,7 +16,7 @@ namespace School
             InitializeComponent();
         }
 
-        private void AddButton_Click(object sender, RoutedEventArgs e)
+        private void AddButton_Click(object sender, RoutedEventArgs e) //добавление записей
         {
             try
             {
@@ -25,7 +25,7 @@ namespace School
                 int duration = Convert.ToInt32(TextBlockDuration.Text);
                 string description = TextBlockDescription.Text;
                 double discount = Convert.ToDouble(TextBlockDiscount.Text);
-                if(discount >= 0 && discount <= 1)
+                if(discount < 0 && discount >= 1)
                 {
                     throw new Exception("Скидка должна быть от 0 до 1\n(например 0,4 = 40%)");
                 }
@@ -34,7 +34,7 @@ namespace School
                     List<Service> service = dbcl.dbP.Service.ToList();
                     if (service.Where(x => x.Title == title).ToList().Count < 1)
                     {
-                        dbcl.dbP.Service.Add(new Service() { Title = title, Cost = (decimal)cost, DurationInSeconds = (duration * 60), Description = description, Discount = discount});
+                        dbcl.dbP.Service.Add(new Service() { Title = title, Cost = cost, DurationInSeconds = (duration * 60), Description = description, Discount = discount});
                         dbcl.dbP.SaveChanges();
                         MessageBox.Show("Добавлено", "Успех!");
                     }

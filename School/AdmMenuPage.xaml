@@ -10,8 +10,12 @@
 
     <Grid>
         <StackPanel VerticalAlignment="Center">
-            <Button Width="150" Click="AddButton_Click">Добавить</Button>
-            <Button Width="150" Margin="0,20">Просмотр</Button>
+            <Button Width="150" Click="AddButton_Click" Template="{StaticResource but}">
+                <TextBlock HorizontalAlignment="Center">Добавить</TextBlock>
+            </Button>
+            <Button Width="150" Margin="0,20" Template="{StaticResource but}">
+                <TextBlock HorizontalAlignment="Center">Просмотр</TextBlock>
+            </Button>
         </StackPanel>
     </Grid>
 </Page>

@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:School"
         mc:Ignorable="d"
         Title="School" Height="450" MinHeight="450" Width="800" MinWidth="800" Icon="Image/school_logo.png">
-    <Grid>
-        <Button Click="BackButton_Click" Height="30" Width="60" Margin="-690,-370,0,0">Назад</Button>
+    <Grid Background="#e7fabf">
+        <Button Click="BackButton_Click" Height="30" Width="60" HorizontalAlignment="Left" VerticalAlignment="Top" Template="{StaticResource but}">Назад</Button>
         <Frame Name="FrameMain" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

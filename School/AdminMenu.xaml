@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:School"
         mc:Ignorable="d"
-        Title="AdminMenu" Height="100" Width="200">
+        Title="AdminMenu" Height="100" Width="220" ResizeMode="NoResize">
     <Grid>
         <StackPanel>
             <TextBlock Style="{StaticResource HeaderNum2}" Focusable="True">Введите админ. код</TextBlock>
-            <PasswordBox Name="CodeBox" Height="30" Width="100" PasswordChanged="CodeBox_PasswordChanged"/>
+            <PasswordBox Name="CodeBox" Height="25" Width="100" PasswordChanged="CodeBox_PasswordChanged"/>
         </StackPanel>
     </Grid>
 </Window>

@@ -9,14 +9,49 @@
       Title="UserPage">
 
     <Grid>
-         <Button Width="50" Height="25" Content="Адм." Margin="700,-360,0,0" Click="AdmBtn_Click"/>
-        
+        <Button Width="50" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Click="AdmBtn_Click" Template="{StaticResource but}">
+            <TextBlock HorizontalAlignment="Center">Адм.</TextBlock>
+        </Button>
+        <Menu Height="40" Width="120" VerticalAlignment="Top" Margin="40" Background="Transparent">
+            <MenuItem>
+                <MenuItem.Header>
+                    <TextBlock HorizontalAlignment="Center" Foreground="Black">Фильтрация</TextBlock>
+                </MenuItem.Header>
+                <StackPanel Orientation="Horizontal" Margin="-30,0">
+                    <RadioButton GroupName="RBSort" Name="SortMin" IsChecked="True" Click="Sort_Checked">
+                        <TextBlock Text="Сначала дешевые" Foreground="Black" Margin="0,0,5,0"/>
+                    </RadioButton>
+
+                    <RadioButton GroupName="RBSort" Name="SortMax" IsChecked="False" Click="Sort_Checked">
+                        <TextBlock Text="Сначала дорогие" Foreground="Black" Margin="0,0,5,0"/>
+                    </RadioButton>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Название</TextBlock>
+                    <TextBox Name="TextBoxTitleFilt" Width="200" TextChanged="TextBoxTitleFilt_TextChanged"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Скидка</TextBlock>
+                    <ComboBox Margin="10,0" Name="CBDiscont" Width="100" SelectionChanged="CBDiscont_SelectionChanged">
+                        <ComboBox.Resources>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.WindowBrushKey}"  Color="#90e7fabf"/>
+                        </ComboBox.Resources>
+                        <TextBlock>Все</TextBlock>
+                        <TextBlock>0%-5%</TextBlock>
+                        <TextBlock>5%-15%</TextBlock>
+                        <TextBlock>15%-30%</TextBlock>
+                        <TextBlock>30%-70%</TextBlock>
+                        <TextBlock>70%-100%</TextBlock>
+                    </ComboBox>
+                </StackPanel>
+            </MenuItem>
+        </Menu>
         <StackPanel>
             <TextBlock Style="{StaticResource HeaderNum1}">Пользовательское меню</TextBlock>
-           
-            <TextBlock Style="{StaticResource HeaderNum2}">Список услуг</TextBlock>
             
-            <ListView Name="ListViewService" Background="Transparent" Height="330" Width="780" ScrollViewer.HorizontalScrollBarVisibility="Disabled" BorderBrush="Transparent">
+            <TextBlock Style="{StaticResource HeaderNum2}">Список услуг</TextBlock>
+
+            <ListView Name="ListViewService" Background="Transparent" Height="340"  Width="780" ScrollViewer.HorizontalScrollBarVisibility="Disabled" BorderBrush="Transparent">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel HorizontalAlignment="Center"/>

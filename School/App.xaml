@@ -20,5 +20,73 @@
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
         </Style>
+         <ControlTemplate x:Key="{x:Static MenuItem.TopLevelHeaderTemplateKey}" TargetType="{x:Type MenuItem}">
+            <Border Name="Border" Background="#04a0ff" CornerRadius="5"  BorderBrush="Transparent" BorderThickness="2" Height="25" Width="120">
+                <Grid>
+                    <ContentPresenter Margin="-1,-3,-4,-9" ContentSource="Header" RecognizesAccessKey="True"/>
+                    <Popup Name="Popup" Placement="Bottom" IsOpen="{TemplateBinding IsSubmenuOpen}" AllowsTransparency="True" Focusable="False" PopupAnimation="Fade">
+                        <Border Name="SubmenuBorder" SnapsToDevicePixels="True" CornerRadius="5" Background="#99FFFFFF" BorderBrush="#0B1538" BorderThickness="2">
+                            <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Cycle" />
+                        </Border>
+                    </Popup>
+                </Grid>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsSuspendingPopupAnimation" Value="true">
+                    <Setter TargetName="Popup" Property="PopupAnimation" Value="None"/>
+                </Trigger>
+                <Trigger Property="IsHighlighted" Value="true">
+                    <Setter TargetName="Border" Property="Background" Value="#e7fabf"/>
+                    <Setter TargetName="Border" Property="BorderBrush" Value="Gray"/>
+                </Trigger>
+                <Trigger SourceName="Popup" Property="Popup.AllowsTransparency" Value="True">
+                    <Setter TargetName="SubmenuBorder" Property="CornerRadius" Value="0,0,4,4"/>
+                    <Setter TargetName="SubmenuBorder" Property="Padding" Value="0,0,0,3"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Foreground" Value="#888888"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#04a0ff"/>
+            <Setter Property="Margin" Value="10"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+                    <Setter Property="RenderTransform">
+                        <Setter.Value>
+                            <ScaleTransform ScaleX="1.2" ScaleY="1.2"/>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect Color="#04a0ff" BlurRadius="7"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+                <Trigger Property="IsMouseCaptured" Value="True" x:Name="capt">
+                    <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+                    <Setter Property="RenderTransform">
+                        <Setter.Value>
+                            <ScaleTransform ScaleX="1.1" ScaleY="1.1"/>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect Color="#04a0ff" BlurRadius="3"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False" x:Name="noena">
+                    <Setter Property="Background" Value="#aa04a0ff"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <ControlTemplate TargetType="Button" x:Key="but">
+            <Border CornerRadius="5" BorderThickness="1" BorderBrush="#0B1538"  Background="{TemplateBinding Background}">
+                <ContentPresenter Content="{TemplateBinding Content}"/>
+            </Border>
+        </ControlTemplate>
     </Application.Resources>
 </Application>
