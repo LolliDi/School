@@ -1,0 +1,27 @@
+﻿<Page x:Class="School.AddServicePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:School"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddServicePage">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center">
+            <TextBlock Style="{StaticResource HeaderNum1}">Добавление услуг</TextBlock>
+            <TextBlock  Margin="5,0,0,-5">Название</TextBlock>
+            <TextBox Width="300" Name="TextBlockTitle" HorizontalAlignment="Left" Margin="5"></TextBox>
+            <TextBlock  Margin="5,0,0,-5">Цена</TextBlock>
+            <TextBox Width="100" Name="TextBlockCost" HorizontalAlignment="Left" Margin="5"></TextBox>
+            <TextBlock  Margin="5,0,0,-5">Длительность (мин)</TextBlock>
+            <TextBox Width="100" Name="TextBlockDuration" HorizontalAlignment="Left" Margin="5"></TextBox>
+            <TextBlock  Margin="5,0,0,-5">Описание</TextBlock>
+            <TextBox Width="400" Name="TextBlockDescription" Height="100" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="5"></TextBox>
+            <TextBlock  Margin="5,0,0,-5">Скидка(от 0 до 1)</TextBlock>
+            <TextBox Width="300" Name="TextBlockDiscount" HorizontalAlignment="Left" Margin="5"></TextBox>
+            <Button Width="100" Click="AddButton_Click">Добавить</Button>
+        </StackPanel>
+    </Grid>
+</Page>
