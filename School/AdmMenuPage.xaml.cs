@@ -29,5 +29,10 @@ namespace School
         {
             FrameClass.dobavstr(new AddServicePage(),FrameClass.i+1);
         }
+
+        private void CheckRecords_Click(object sender, RoutedEventArgs e)
+        {
+            FrameClass.dobavstr(new AdminViewRecords(), FrameClass.i + 1);
+        }
     }
 }

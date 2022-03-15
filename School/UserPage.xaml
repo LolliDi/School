@@ -69,6 +69,7 @@
                                             <TextBlock Text="{Binding DiscountService}" TextDecorations="Strikethrough"/>
                                             <TextBlock Text="{Binding CostService}"/>
                                         </StackPanel>
+                                        <Button Uid="{Binding ID}" Click="AddRecord_Click" Width="100">Записаться</Button>
                                     </StackPanel>
                                 </StackPanel>
                             </StackPanel>

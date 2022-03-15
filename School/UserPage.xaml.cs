@@ -106,5 +106,10 @@ namespace School
         {
             Filter();
         }
+
+        private void AddRecord_Click(object sender, RoutedEventArgs e)
+        {
+            FrameClass.dobavstr(new AddRecordClient(Convert.ToInt32((sender as Button).Uid)), FrameClass.i + 1);
+        }
     }
 }

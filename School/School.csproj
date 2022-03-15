@@ -64,11 +64,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddRecordClient.xaml.cs">
+      <DependentUpon>AddRecordClient.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddServicePage.xaml.cs">
       <DependentUpon>AddServicePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="AdminMenu.xaml.cs">
       <DependentUpon>AdminMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminViewRecords.xaml.cs">
+      <DependentUpon>AdminViewRecords.xaml</DependentUpon>
     </Compile>
     <Compile Include="AdmMenuPage.xaml.cs">
       <DependentUpon>AdmMenuPage.xaml</DependentUpon>
@@ -79,6 +85,7 @@
     <Compile Include="ClientService.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ClientServiceDate.cs" />
     <Compile Include="dbcl.cs" />
     <Compile Include="DBCostService.cs" />
     <Compile Include="DocumentByService.cs">
@@ -130,11 +137,19 @@
     <Compile Include="UserPage.xaml.cs">
       <DependentUpon>UserPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddRecordClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddServicePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AdminMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminViewRecords.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
