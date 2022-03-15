@@ -43,6 +43,10 @@ namespace School
                         throw new Exception("Такой урок уже существует");
                     }
                 }
+                else
+                {
+                    throw new Exception("Введены не все данные");
+                }
             }
             catch (Exception ex)
             {

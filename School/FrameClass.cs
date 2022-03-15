@@ -26,7 +26,6 @@ namespace School
             fr.Navigate(stranpereh[ind]); //переходим
             i = ind;
             ii = ind + 1;
-            //prover();
         }
 
         public static int I //изменяем при переходе

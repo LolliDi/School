@@ -31,16 +31,14 @@ namespace School
         private void AdmBtn_Click(object sender, RoutedEventArgs e)
         {
             AdminMenu admMenu = new AdminMenu();
-            MainWindow w=new MainWindow();
             foreach (Window ww in Application.Current.Windows)
             {
                 if (ww.GetType() == typeof(MainWindow))
                 {
-                    w = ww as MainWindow;
+                    admMenu.Owner = ww;
                     break;
                 }
             }
-            admMenu.Owner = w;
             admMenu.Visibility = System.Windows.Visibility.Visible;
             admMenu.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterOwner;
             admMenu.ShowDialog();
